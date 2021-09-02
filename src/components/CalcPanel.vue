@@ -54,7 +54,7 @@ export default {
           break;
         case ".":
           // don't put two decimal points in a row
-          if (!/\.$/.test(prev)) this.text = prev + key;
+          if (!/\.\d*$/.test(prev)) this.text = prev + key;
           break;
         case "=":
           if (/^.*\d+$/.test(prev)) {
