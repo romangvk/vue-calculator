@@ -1,6 +1,6 @@
 <template>
   <span class="panel">
-    <CalcOutput text="text"></CalcOutput>
+    <CalcOutput :text="text"></CalcOutput>
     <CalcKeypad @keypress="keypress"></CalcKeypad>
   </span>
 </template>
