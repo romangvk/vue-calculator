@@ -1,0 +1,59 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+button {
+  margin: 0;
+  padding: 0.5em;
+
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+
+  color: var(--text);
+
+  outline: none;
+  border: 0.05em solid var(--border);
+
+  border-radius: 0.7em;
+  box-shadow: 0.2em 0.2em 0.4em var(--dark), -0.2em -0.2em 0.4em var(--light);
+  background-color: var(--base);
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--light);
+}
+
+button:active {
+  box-shadow: 0.2em 0.2em 0.4em var(--dark), -0.2em -0.2em 0.4em var(--light),
+    inset 0.2em 0.2em 0.4em var(--dark), inset -0.2em -0.2em 0.4em var(--light);
+}
+
+.key1 {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: var(--accent);
+  color: var(--alt-text);
+}
+.key2 {
+  grid-area: 2 / 4 / 4 / 5;
+}
+.key3 {
+  grid-area: 5 / 1 / 6 / 3;
+}
+.key4 {
+  grid-area: 4 / 4 / 6 / 5;
+  background-color: var(--accent);
+  color: var(--alt-text);
+}
+.key1:hover,
+.key4:hover {
+  background-color: var(--accent-light);
+}

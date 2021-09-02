@@ -1,0 +1,25 @@
+.light {
+  --base: #efeeee;
+  --text: black;
+  --light: #fff7;
+  --dark: #d1cdc777;
+  --border: #fff4;
+  --shadow: #0002;
+  --background: white;
+  --accent: #41b883;
+  --alt-text: black;
+  --accent-light: #68ca9e;
+}
+
+.dark {
+  --base: #313130;
+  --text: #dee;
+  --light: #ffe1;
+  --dark: #0006;
+  --border: #0001;
+  --shadow: #0008;
+  --background: #212120;
+  --accent: #41b883;
+  --alt-text: var(--base);
+  --accent-light: #68ca9e;
+}

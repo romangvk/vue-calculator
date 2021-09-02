@@ -1,0 +1,66 @@
+.output {
+  height: 2em;
+  margin-bottom: 1em;
+  padding: 0 0.5em;
+
+  font-size: 3em;
+  line-height: 1.9em;
+  text-align: right;
+
+  border-bottom: solid 0.1em var(--dark);
+  border-radius: 0.3em;
+
+  background-color: var(--light);
+  color: var(--text);
+}
+
+.smaller {
+  height: 4em;
+  margin-bottom: 2em;
+  padding: 0 1em;
+
+  font-size: 1.5em;
+  line-height: 3.8em;
+  text-align: right;
+
+  border-bottom: solid 0.2em var(--dark);
+  border-radius: 0.6em;
+
+  background-color: var(--light);
+}
+
+.smallest {
+  height: 6em;
+  margin-bottom: 3em;
+  padding: 0 1.5em;
+
+  font-size: 1em;
+  line-height: 1.5em;
+
+  border-bottom: solid 0.3em var(--dark);
+  border-radius: 0.9em;
+
+  overflow-wrap: anywhere;
+
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
