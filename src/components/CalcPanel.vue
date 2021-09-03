@@ -37,11 +37,27 @@ export default {
         case "C":
           this.text = "";
           break;
+        case "(":
+          // don't put an open paren after a decimal point
+          if (!/\.$/.test(prev)) this.text = prev + "(";
+          break;
+        case ")":
+          // only put a close paren if there is an open paren that has not been closed
+          if (
+            /(\d|\))$/.test(prev) &&
+            (prev.match(/\(/g) || []).length > (prev.match(/\)/g) || []).length
+          )
+            this.text = prev + ")";
+          break;
+        case "↩":
+          this.text = this.text = prev.replace(/.$/, "");
+          break;
+        case "^":
         case "/":
         case "*":
         case "+":
-          // only add an operator after a number
-          if (/\d$/.test(prev)) this.text = prev + key;
+          // only add an operator after a number or close paren
+          if (/(\d|\))$/.test(prev)) this.text = prev + key;
           break;
         case "-":
           // preceded by + change to minus
@@ -54,12 +70,17 @@ export default {
           break;
         case ".":
           // don't put two decimal points in a row
-          if (!/\.\d*$/.test(prev)) this.text = prev + key;
+          if (!/\.\d*$/.test(prev)) this.text = prev + ".";
           break;
         case "=":
-          if (/^.*\d+$/.test(prev)) {
+          // evaluate if the expression ends in a number or a close paren
+          // and also that the number of close parens matches the number of open parens
+          if (
+            /(\d|\))$/.test(prev) &&
+            (prev.match(/\(/g) || []).length ===
+              (prev.match(/\)/g) || []).length
+          )
             this.text = String(evaluate(prev));
-          }
           break;
         default:
           this.text = prev + key;
