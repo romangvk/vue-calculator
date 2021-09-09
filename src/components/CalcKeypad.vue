@@ -1,19 +1,25 @@
 <template>
   <div className="container">
-    <button type="button" class="key1" v-on:click="$emit('keypress', 'C')">
+    <button type="button" class="key-clear" v-on:click="$emit('keypress', 'C')">
       C
     </button>
-    <button type="button" class="key2" v-on:click="$emit('keypress', '+')">
+    <button type="button" class="key-back" v-on:click="$emit('keypress', '↩')">
+      ↩
+    </button>
+    <button type="button" class="key-plus" v-on:click="$emit('keypress', '+')">
       +
     </button>
-    <button type="button" class="key3" v-on:click="$emit('keypress', '0')">
+    <button type="button" class="key-0" v-on:click="$emit('keypress', '0')">
       0
     </button>
-    <button type="button" class="key4" v-on:click="$emit('keypress', '=')">
+    <button type="button" class="key-equal" v-on:click="$emit('keypress', '=')">
       =
     </button>
     <button
       v-for="(k, i) of [
+        '(',
+        ')',
+        '^',
         '/',
         '*',
         '-',
