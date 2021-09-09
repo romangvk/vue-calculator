@@ -50,7 +50,7 @@ export default {
             this.text = prev + ")";
           break;
         case "↩":
-          this.text = this.text = prev.replace(/.$/, "");
+          this.text = prev.replace(/.$/, "");
           break;
         case "^":
         case "/":
