@@ -80,7 +80,7 @@ export default {
             (prev.match(/\(/g) || []).length ===
               (prev.match(/\)/g) || []).length
           )
-            this.text = String(evaluate(prev));
+            this.text = String(evaluate(prev)).replace(/e\+?/, "*10^");
           break;
         default:
           this.text = prev + key;
